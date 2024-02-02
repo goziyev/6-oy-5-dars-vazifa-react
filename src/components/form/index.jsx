@@ -3,7 +3,7 @@ import delate from "../../assets/download.jpg";
 import { LocalStoragePush, LocalStorageGet,validate } from "./indexForm";
 import "./main.css";
 
-export default function Forma() {
+export default function Form() {
   const [input, setInput] = useState();
   const [data, setData] = useState([]);
 

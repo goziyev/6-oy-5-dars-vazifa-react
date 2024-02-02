@@ -6,7 +6,7 @@ function LocalStorageGet(){
 }
 
 function validate(input) {
-    if (!input || !input.trim()) {
+    if ( input.length <= 3 || !input || !input.trim()) {
       alert(
         "Kiritilgan ishoralar soni 3 tadan kam bo'lishi va probellardan tashkil topgan bolishi mumkin emas"
       );
