@@ -1,4 +1,6 @@
-.form-container{
+
+
+.formContainer{
     margin-left: auto;
     margin-right: auto;
     margin-top: 200px;
@@ -14,17 +16,17 @@ h1{
     padding: 10px;
 
 }
-.form-form{
+.formWrapper{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
-.form-form input{
+.formWrapper input{
     width: 80%;
     padding: 18px;
     outline: none;
 }
-.form-form button{
+.formWrapper button{
     border: 2px solid transparent;
     background-color:blue;
     color: white;
@@ -40,15 +42,15 @@ h1{
 
 
 
-.form-form button:hover{
+.formWrapper button:hover{
     border-color: blue;
     background-color: white;
     color:blue;
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center; 
     color: #fff;
     text-decoration: none;
 }
-.todos-cards{
+.todoCards{
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -67,7 +69,7 @@ h1{
     display: flex;
     gap: 5px;
 }
-.card div img{
+ .card div img{
     width: 40px;
     cursor: pointer;
     border-radius: 70%;

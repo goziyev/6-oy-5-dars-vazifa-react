@@ -1,7 +1,8 @@
-import {Fragment, useState, useEffect } from "react";
-import delate from "../../assets/download.jpg";
-import { LocalStoragePush, LocalStorageGet,validate } from "./indexForm";
-import "./main.css";
+import { Fragment, useState, useEffect } from "react";
+import Todo from "../todo-card";
+import InputAndButton from "../todo-input";
+import { LocalStoragePush, LocalStorageGet, validate } from "./indexForm";
+import style from  "./main.module.css";
 
 export default function Form() {
   const [input, setInput] = useState();
@@ -19,13 +20,11 @@ export default function Form() {
     LocalStoragePush(delate);
   }
 
-
-
   function handleClick(e) {
     e.preventDefault();
     let card = {
       name: input,
-      id: Date.now().toString()
+      id: Date.now().toString(),
     };
     if (validate(input)) {
       data.push(card);
@@ -36,44 +35,22 @@ export default function Form() {
   }
 
   return (
-    <div className="form-container">
+    <div className={style.formContainer}>
       <h1>
         Todos <strong style={{ color: "red" }}> {data.length}</strong>
       </h1>
-      <div className="form">
-        <form className="form-form">
-          <input
-            value={input}
-            onChange={(e) => {
-              setInput(e.target.value);
-            }}
-            type="text"
-            placeholder="Enter todo here"
-            maxLength={30}
-          />
-          <button onClick={handleClick}>Submit</button>
-        </form>
-      </div>
+     <InputAndButton input ={input} setInput = {setInput} handleClick = {handleClick} />
 
-      <div className="todos-cards">
+      <div className={style.todoCards}>
         {localStorage.getItem("todos") &&
           data.map((el, index) => {
             return (
               <Fragment key={index}>
-                <div className="card">
-                  <div>
-                    <p>{el.name}</p>
-                  </div>
-                  <div>
-                    <img
-                      src={delate}
-                      alt=""
-                      onClick={() => {
-                        handleDelate(el.id);
-                      }}
-                    />
-                  </div>
-                </div>
+                <Todo
+                  name={el.name}
+                  dataId={el.id}
+                  handleDelate={handleDelate}
+                />
               </Fragment>
             );
           })}
