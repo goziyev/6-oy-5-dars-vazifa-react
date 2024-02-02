@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/images6/Galaxy-Wallpaper-4k-Wallpaper-Blue-Color.png");
+    background-size:cover;
+}
